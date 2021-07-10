@@ -28,8 +28,8 @@ contract Stake is ERC20, Ownable {
     /**
      * @notice The constructor for the Staking Token.
      * @param _supply The amount of tokens to mint on construction.
-     * @param _supply The amount of tokens to mint on construction.
-     * @param _supply The amount of tokens to mint on construction.
+     * @param _name The name of token
+     * @param _supply The symbol of token
      */
     constructor(uint256 _supply, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
         _mint(msg.sender, _supply);
