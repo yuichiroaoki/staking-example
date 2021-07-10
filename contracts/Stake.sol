@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "hardhat/console.sol";
 
-abstract contract Stake is ERC20, Ownable {
+contract Stake is ERC20, Ownable {
     using SafeMath for uint256;
 
     /**
@@ -27,11 +27,12 @@ abstract contract Stake is ERC20, Ownable {
 
     /**
      * @notice The constructor for the Staking Token.
-     * @param _owner The address to receive all tokens on construction.
+     * @param _supply The amount of tokens to mint on construction.
+     * @param _supply The amount of tokens to mint on construction.
      * @param _supply The amount of tokens to mint on construction.
      */
-    constructor(address _owner, uint256 _supply) {
-        _mint(_owner, _supply);
+    constructor(uint256 _supply, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
+        _mint(msg.sender, _supply);
     }
 
     // ---------- STAKES ----------
